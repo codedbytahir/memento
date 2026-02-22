@@ -49,7 +49,7 @@ const LoadingScreen = ({ onComplete }) => {
     <div className="min-h-screen bg-memento-cream flex items-center justify-center p-4">
       <div className="text-center space-y-12 max-w-md w-full">
         <div className="space-y-4">
-          <h2 className="text-3xl font-bold text-memento-navy">Your biographer is at work...</h2>
+          <h2 className="text-3xl font-serif font-bold text-memento-navy">Your biographer is at work...</h2>
           <p className="text-lg text-memento-charcoal/70">{status}</p>
         </div>
 

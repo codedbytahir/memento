@@ -54,9 +54,9 @@ const UploadScreen = ({ onStart }) => {
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="max-w-lg w-full space-y-8">
         <div className="text-center">
-          <img src="/logo.svg" alt="Memento" className="h-16 mx-auto mb-4" />
-          <h1 className="text-3xl font-bold text-memento-navy">Preserve Your Story</h1>
-          <p className="text-memento-charcoal/70 mt-2">Upload up to 5 photos to begin your journey.</p>
+          <img src="/logo.svg" alt="Memento" className="h-24 mx-auto mb-2" />
+          <h1 className="text-4xl font-serif font-bold text-memento-navy">Preserve Your Story</h1>
+          <p className="text-memento-charcoal/70 mt-3 font-medium">Capture the moments that matter, forever.</p>
         </div>
 
         <div

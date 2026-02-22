@@ -49,7 +49,7 @@ const PreviewScreen = ({ sessionId, userEmail }) => {
           <div className="flex justify-center">
             <CheckCircle size={48} className="text-memento-sage" />
           </div>
-          <h1 className="text-4xl font-bold text-memento-navy">
+          <h1 className="text-4xl font-serif font-bold text-memento-navy">
             Your Biography is Ready
           </h1>
           <p className="text-lg text-memento-charcoal/70">
