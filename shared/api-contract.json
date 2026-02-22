@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "endpoints": {
+    "start_session": {
+      "method": "POST",
+      "path": "/start-session",
+      "request": {
+        "user_email": "string",
+        "images": ["base64_string"]
+      },
+      "response": {
+        "session_id": "uuid",
+        "websocket_url": "wss://..."
+      }
+    },
+    "websocket_stream": {
+      "path": "/stream",
+      "actions": {
+        "message": {
+          "request": {
+            "action": "message",
+            "audio_chunk": "base64_string"
+          },
+          "response": {
+            "ai_question": "string",
+            "audio_response": "base64_string",
+            "transcript_update": "string"
+          }
+        }
+      }
+    },
+    "generate_biography": {
+      "method": "POST",
+      "path": "/generate",
+      "request": {
+        "session_id": "uuid"
+      },
+      "response": {
+        "status": "processing"
+      }
+    }
+  }
+}
