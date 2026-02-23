@@ -29,6 +29,12 @@ Built for the **Amazon Nova AI Hackathon**.
    ./backend/deploy.sh
    ```
 
+## ☁️ Cloud Development
+
+Memento is optimized for **Firebase Studio (IDX)**. You can import this project into Firebase Studio for a pre-configured cloud development environment.
+
+See [Firebase Studio Setup](./docs/FIREBASE_STUDIO.md) for details.
+
 ## 🛠 Tech Stack
 
 - **Frontend:** React 18, Vite, Tailwind CSS, Framer Motion, Zustand
