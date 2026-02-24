@@ -1,0 +1,21 @@
+{
+  "name": "memento-backend",
+  "version": "1.0.0",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.0.0",
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/client-ses": "^3.0.0",
+    "@aws-sdk/client-sqs": "^3.0.0",
+    "@aws-sdk/util-dynamodb": "^3.0.0",
+    "pdf-lib": "^1.17.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.160",
+    "@types/node": "^20.19.33",
+    "@types/uuid": "^9.0.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.9.3"
+  }
+}

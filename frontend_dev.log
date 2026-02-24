@@ -1,11 +1,24 @@
 
-> frontend@0.0.0 dev
-> vite
+> frontend@0.1.0 dev
+> next dev
 
-Port 5173 is in use, trying another one...
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+- Environments: .env.local
 
-  VITE v7.3.1  ready in 302 ms
-
-  ➜  Local:   http://localhost:Killed
- ➜  Network: use --host to expose
-Killed
+✓ Starting...
+✓ Ready in 1146ms
+○ Compiling / ...
+ GET / 200 in 5.6s (compile: 5.3s, render: 372ms)
+○ Compiling /api/generate ...
+Error: Region is missing
+    at async POST (src/app/api/generate/route.ts:19:5)
+  17 |
+  18 |     // 1. Update status
+> 19 |     await docClient.send(new UpdateCommand({
+     |     ^
+  20 |       TableName: process.env.SESSIONS_TABLE,
+  21 |       Key: { session_id },
+  22 |       UpdateExpression: 'SET #status = :st',
+ POST /api/generate 500 in 4.2s (compile: 3.6s, render: 608ms)
