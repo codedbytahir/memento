@@ -3,9 +3,9 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, UpdateCommand } from "@aws-sdk/lib-dynamodb";
 import { SQSClient, SendMessageCommand } from "@aws-sdk/client-sqs";
 
-const ddbClient = new DynamoDBClient({});
+const ddbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
 const docClient = DynamoDBDocumentClient.from(ddbClient);
-const sqsClient = new SQSClient({});
+const sqsClient = new SQSClient({ region: process.env.AWS_REGION });
 
 export async function POST(req: NextRequest) {
   try {

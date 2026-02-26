@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 
-const ddbClient = new DynamoDBClient({});
+const ddbClient = new DynamoDBClient({ region: process.env.AWS_REGION });
 const docClient = DynamoDBDocumentClient.from(ddbClient);
 
 export async function GET(

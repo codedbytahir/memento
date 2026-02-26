@@ -7,9 +7,13 @@ Memento is an AI-powered application that interviews users about their memories,
 ## 🚀 Quick Start
 
 1. **Setup AWS Credentials:**
-   ```bash
-   aws configure
+   Create a `frontend/.env.local` file (copy from `.env.example`) and fill in your AWS credentials:
+   ```env
+   AWS_ACCESS_KEY_ID=your_key
+   AWS_SECRET_ACCESS_KEY=your_secret
+   AWS_REGION=us-east-1
    ```
+   *Note: This avoids having to run `aws configure` and keeps your terminal history clean.*
 
 2. **Verify Nova Model Access:**
    ```bash
@@ -25,7 +29,11 @@ Memento is an AI-powered application that interviews users about their memories,
    ```
 
 4. **Deploy to Production:**
+   To deploy using the credentials from your `.env.local`:
    ```bash
+   # Export credentials to your current shell
+   export $(grep -v '^#' frontend/.env.local | xargs)
+
    sam build
    sam deploy --guided
    ```

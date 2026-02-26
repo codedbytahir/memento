@@ -22,3 +22,4 @@ Error: Region is missing
   21 |       Key: { session_id },
   22 |       UpdateExpression: 'SET #status = :st',
  POST /api/generate 500 in 4.2s (compile: 3.6s, render: 608ms)
+  Reload env: .env.local

@@ -1,7 +1,7 @@
 import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime";
 
 async function checkModelAccess(modelId: string) {
-  const client = new BedrockRuntimeClient({ region: "us-east-1" });
+  const client = new BedrockRuntimeClient({ region: process.env.AWS_REGION || "us-east-1" });
   try {
     await client.send(new InvokeModelCommand({
       modelId,
