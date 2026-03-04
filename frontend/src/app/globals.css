@@ -1,23 +1,64 @@
 @import "tailwindcss";
 
 @theme {
-  --color-memento-navy: #1F3864;
-  --color-memento-copper: #D4A574;
-  --color-memento-sage: #8B9D83;
-  --color-memento-cream: #FAF9F6;
-  --color-memento-charcoal: #2C2C2C;
+  /* Colors from PRD */
+  --color-navy: #1F3864;
+  --color-navy-light: #2E4B7F;
+  --color-navy-dark: #152849;
 
+  --color-copper: #D4A574;
+  --color-copper-light: #E5C09E;
+  --color-copper-dark: #B88F5F;
+
+  --color-charcoal: #2C2C2C;
+  --color-charcoal-light: #595959;
+
+  --color-cream: #FAF9F6;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-serif: "Georgia", "Times New Roman", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Georgia", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Animations & Keyframes */
+  --animate-wave: wave 1.5s ease-in-out infinite;
+  --animate-book-open: book-open 0.6s ease-out;
+  --animate-fade-in: fade-in 0.3s ease-in;
+
+  @keyframes wave {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.5); }
+  }
+  @keyframes book-open {
+    0% { transform: rotateY(-90deg); }
+    100% { transform: rotateY(0deg); }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 }
 
 :root {
-  background-color: #FAF9F6;
-  color: #2C2C2C;
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
 }
 
 body {
-  @apply bg-memento-cream text-memento-charcoal;
+  @apply bg-cream text-charcoal antialiased;
   font-family: var(--font-sans);
+}
+
+h1, h2, h3, .serif {
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
 }

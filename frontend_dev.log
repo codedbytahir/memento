@@ -5,21 +5,165 @@
 ▲ Next.js 16.1.6 (Turbopack)
 - Local:         http://localhost:3000
 - Network:       http://192.168.0.2:3000
-- Environments: .env.local
 
 ✓ Starting...
-✓ Ready in 1146ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+✓ Ready in 1248ms
 ○ Compiling / ...
- GET / 200 in 5.6s (compile: 5.3s, render: 372ms)
-○ Compiling /api/generate ...
-Error: Region is missing
-    at async POST (src/app/api/generate/route.ts:19:5)
-  17 |
-  18 |     // 1. Update status
-> 19 |     await docClient.send(new UpdateCommand({
-     |     ^
-  20 |       TableName: process.env.SESSIONS_TABLE,
-  21 |       Key: { session_id },
-  22 |       UpdateExpression: 'SET #status = :st',
- POST /api/generate 500 in 4.2s (compile: 3.6s, render: 608ms)
-  Reload env: .env.local
+ GET / 200 in 5.6s (compile: 5.2s, render: 428ms)
+○ Compiling /interview ...
+ GET /interview 200 in 3.7s (compile: 3.4s, render: 294ms)
+ GET / 200 in 32ms (compile: 5ms, render: 28ms)
+ GET / 200 in 80ms (compile: 5ms, render: 75ms)
+ GET /interview 200 in 81ms (compile: 6ms, render: 76ms)
+ GET /loading 200 in 1156ms (compile: 1023ms, render: 133ms)
+○ Compiling /preview ...
+ GET /preview 200 in 4.5s (compile: 4.4s, render: 115ms)
+⨯ ./src/lib/pdf/generator.ts:1:1
+Module not found: Can't resolve 'jspdf'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { jsPDF } [36mfrom[39m [32m"jspdf"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m html2canvas [36mfrom[39m [32m"html2canvas"[39m[33m;[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mexport[39m [36mconst[39m generatePDF [33m=[39m [36masync[39m (elementId[33m:[39m string[33m,[39m filename[33m:[39m string [33m=[39m [32m"memento_biography.pdf"[39m) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/pdf/generator.ts [Client Component Browser]
+    ./src/app/preview/page.tsx [Client Component Browser]
+    ./src/app/preview/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/pdf/generator.ts [Client Component SSR]
+    ./src/app/preview/page.tsx [Client Component SSR]
+    ./src/app/preview/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/lib/pdf/generator.ts:1:1
+Module not found: Can't resolve 'jspdf'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { jsPDF } [36mfrom[39m [32m"jspdf"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m html2canvas [36mfrom[39m [32m"html2canvas"[39m[33m;[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mexport[39m [36mconst[39m generatePDF [33m=[39m [36masync[39m (elementId[33m:[39m string[33m,[39m filename[33m:[39m string [33m=[39m [32m"memento_biography.pdf"[39m) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/pdf/generator.ts [Client Component Browser]
+    ./src/app/preview/page.tsx [Client Component Browser]
+    ./src/app/preview/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/pdf/generator.ts [Client Component SSR]
+    ./src/app/preview/page.tsx [Client Component SSR]
+    ./src/app/preview/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/lib/pdf/generator.ts:1:1
+Module not found: Can't resolve 'jspdf'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { jsPDF } [36mfrom[39m [32m"jspdf"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m html2canvas [36mfrom[39m [32m"html2canvas"[39m[33m;[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mexport[39m [36mconst[39m generatePDF [33m=[39m [36masync[39m (elementId[33m:[39m string[33m,[39m filename[33m:[39m string [33m=[39m [32m"memento_biography.pdf"[39m) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/pdf/generator.ts [Client Component Browser]
+    ./src/app/preview/page.tsx [Client Component Browser]
+    ./src/app/preview/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/pdf/generator.ts [Client Component SSR]
+    ./src/app/preview/page.tsx [Client Component SSR]
+    ./src/app/preview/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/lib/pdf/generator.ts:1:1
+Module not found: Can't resolve 'jspdf'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { jsPDF } [36mfrom[39m [32m"jspdf"[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mimport[39m html2canvas [36mfrom[39m [32m"html2canvas"[39m[33m;[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mexport[39m [36mconst[39m generatePDF [33m=[39m [36masync[39m (elementId[33m:[39m string[33m,[39m filename[33m:[39m string [33m=[39m [32m"memento_biography.pdf"[39m) [33m=>[39m {[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/pdf/generator.ts [Client Component Browser]
+    ./src/app/preview/page.tsx [Client Component Browser]
+    ./src/app/preview/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/pdf/generator.ts [Client Component SSR]
+    ./src/app/preview/page.tsx [Client Component SSR]
+    ./src/app/preview/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+✓ Compiled in 1329ms
+ GET / 200 in 190ms (compile: 11ms, render: 178ms)
+ GET /interview 200 in 423ms (compile: 186ms, render: 237ms)
+ GET /loading 200 in 334ms (compile: 123ms, render: 211ms)
+ GET /preview 200 in 1584ms (compile: 1272ms, render: 312ms)
+○ Compiling /api/status/[sessionId] ...
+Error: Resolved credential object is not valid
+    at async getSession (src/lib/aws/dynamodb.ts:9:20)
+    at async GET (src/app/api/status/[sessionId]/route.ts:24:21)
+   7 |     Key: { session_id: sessionId },
+   8 |   });
+>  9 |   const response = await docClient.send(command);
+     |                    ^
+  10 |   return response.Item;
+  11 | };
+  12 | {
+  '$metadata': [Object]
+}
+ GET / 200 in 2.4s (compile: 962ms, render: 1419ms)
+ GET /interview 200 in 151ms (compile: 12ms, render: 139ms)
+ GET /loading 200 in 126ms (compile: 15ms, render: 111ms)
+Error: Resolved credential object is not valid
+    at async getSession (src/lib/aws/dynamodb.ts:9:20)
+    at async GET (src/app/api/status/[sessionId]/route.ts:24:21)
+   7 |     Key: { session_id: sessionId },
+   8 |   });
+>  9 |   const response = await docClient.send(command);
+     |                    ^
+  10 |   return response.Item;
+  11 | };
+  12 | {
+  '$metadata': [Object]
+}
+ GET /api/status/mock-123 500 in 510ms (compile: 171ms, render: 338ms)
+Error: Resolved credential object is not valid
+    at async getSession (src/lib/aws/dynamodb.ts:9:20)
+    at async GET (src/app/api/status/[sessionId]/route.ts:24:21)
+   7 |     Key: { session_id: sessionId },
+   8 |   });
+>  9 |   const response = await docClient.send(command);
+     |                    ^
+  10 |   return response.Item;
+  11 | };
+  12 | {
+  '$metadata': [Object]
+}
+ GET /api/status/mock-123 500 in 284ms (compile: 7ms, render: 277ms)
+ GET /preview 200 in 61ms (compile: 8ms, render: 53ms)
